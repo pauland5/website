@@ -1,0 +1,72 @@
+﻿
+<html>
+
+<head>
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+    crossorigin="anonymous">
+</head>
+
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Custom Search</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+</ul>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h3 class="display-1">Wine Search</h3>
+        <p class="lead">Please select your search criteria</p>
+    </div>
+</div>
+
+
+<form action="" method="post">
+    {# This will display the radio button HTML for you #}
+    {% csrf_token %}
+    <div style="position: absolute; left: 100;">
+        <button type="submit" class="btn btn-primary">Click this button after choosing criteria below</button> 
+    </div>
+    </br></br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Varietal</h3>
+                <ul class="list-group" style="list-style-type: none;>
+                    {% for radio in varietal_form %}
+                    {{radio}}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h3>Region</h3>
+                <ul class="list-group" style="list-style-type: none;>
+                    {% for radio in region_form %}
+                    {{radio}}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h3>Sort Order</h3>
+                <ul class="list-group" style="list-style-type: none;>
+                    {% for radio in sort_form %}
+                    {{radio}}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+   
+
+</form>
+
+
+
+</html>

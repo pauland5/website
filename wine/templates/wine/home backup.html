@@ -1,0 +1,60 @@
+﻿
+
+
+<h2>Please select your search criteria</h2></br>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ name_form }}
+    <input type="submit" value="Submit" />
+</form>
+</br>
+
+<form action="" method="post">
+    {# This will display the radio button HTML for you #}
+    {% csrf_token %}
+    {{ color_form }}
+    <input type="submit" value="Choose Color">
+</form>
+</br></br>
+
+
+<h3>Color</h3>
+<form action="" method="post">
+    {% for k, v in color.items %}
+
+        <label for={v{}}><input type="radio" name="display_type" value="locationbox" id= {{v}}>{{k}}</label> </br>
+
+    {% endfor %}
+</form>
+</br>
+<h3>Varietal</h3>
+<form action="" method="post">
+    {% for k, v in varietal.items %}
+
+    <label for={v{}}><input type="radio" name="display_type" value="locationbox" id={{v}}>{{k}}</label> </br>
+
+    {% endfor %}
+</form>
+</br>
+
+</br>
+<h3>Region</h3>
+<form action="" method="post">
+    {% for k, v in region.items %}
+
+        <label for={v{}}><input type="radio" name="display_type" value="locationbox" id={{v}}>{{k}}</label> </br>
+
+    {% endfor %}
+</form>
+
+</br>
+
+<h3>Sort By</h3>
+<form action="" method="post">
+    {% for k, v in sort.items %}
+
+        <label for={v{}}><input type="radio" name="display_type" value="locationbox" id={{v}}>{{k}}</label> </br>
+
+    {% endfor %}
+</form>
